@@ -1,0 +1,120 @@
+<header id="head">
+  <div class="container flex">
+    <div class="logo">
+      <a href="/"><img src="/img/logo.png" alt="" /></a>
+    </div>
+    <nav class="flex">
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+      <ul class="sec-nav ml-5">
+        <li><a href="#"><i class="fas fa-user"></i> | {{name}} </a></li>
+        <li><a href="/users/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container flex">
+  <section class="side-bar">
+    <div class="brand">
+      <h2>bitly</h2>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/users/dashboard" class="flex">
+            <img src="/img/tachometer-alt.svg" alt="tachometer dashboard" />
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="/users/fund" class="flex active">
+            <img src="/img/chart-bar.svg" alt="tachometer dashboard" />
+            Fund Wallet
+          </a>
+        </li>
+        <li>
+          <a href="/users/withdraw" class="flex">
+            <img src="/img/dna.svg" alt="tachometer dashboard" />
+            Withraw fund
+          </a>
+        </li>
+        <li>
+          <a href="/users/profile" class="flex">
+            <img src="/img/user.svg" alt="tachometer dashboard" />
+            Profile
+          </a>
+        </li>
+        <li>
+          <a href="/users/settings" class="flex">
+            <img src="/img/folder.svg" alt="tachometer dashboard" />
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="main">
+    <div class="head">FUNDING</div>
+    <div class="head second">
+      <h3>PAY WITH FLUTTERWAVE</h3>
+    </div>
+    <div
+      class="stat"
+      style="border: 1px solid salmon; width: 90%; margin: 15px auto; padding: 15px"
+    >
+      <div class="payment-details">
+        <p class="pay-head">Account</p>
+        <p class="pay-body">
+          <span class="bold">
+            {{firstName}}
+            {{lastName}}
+          </span>
+        </p>
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <div class="payment-details">
+      </div>
+      <form>
+        <script src="https://checkout.flutterwave.com/v3.js"></script>
+        <button
+          type="button"
+          id="makePayment"
+          style="background-color: darksalmon; margin: 0; padding: 10px 20px; border: none; text-transform:uppercase; font-weight:bold; font-size:13px; cursor:pointer"
+        >Pay Now</button>
+      </form>
+
+     
+
+
+      <br />
+      <hr />
+      <div class="payment-details">
+        <p class="pay-body">Amount in USD:
+          <span class="bold">$
+            {{#if fund}}
+              {{#each fund}}
+                {{amount}}
+              {{/each}}
+            {{/if}}
+          </span></p>
+      </div>
+    </div>
+    <div class="form-input">
+      <a href="/users/dashboard" class="btn btn-block">
+        Go to Dashboard
+      </a>
+    </div>
+  </section>
+</div>
+
+<script src="/js/wave.js"></script>

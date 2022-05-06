@@ -1,0 +1,33 @@
+{
+  "name": "bitly-investment",
+  "version": "3.5.2",
+  "description": "BITCOIN INVESTMENT, CRYPTO INVESTMENT",
+  "main": "app",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "BITLY INC",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.4.1",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.11.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.10",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "uuidv4": "^6.2.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

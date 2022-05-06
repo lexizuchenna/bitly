@@ -1,0 +1,94 @@
+<header id="head">
+  <div class="container flex">
+    <div class="logo">
+      <a href="/"><img src="/img/logo.png" alt="" /></a>
+    </div>
+    <nav class="flex">
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+      <ul class="sec-nav ml-5">
+        <li><a href="#"><i class="fas fa-user"></i> | {{name}} </a></li>
+        <li><a href="/users/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container flex">
+  <section class="side-bar">
+    <div class="brand">
+      <h2>bitly</h2>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/users/dashboard" class="flex">
+            <img src="/img/tachometer-alt.svg" alt="tachometer dashboard" />
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="/users/fund" class="flex active">
+            <img src="/img/chart-bar.svg" alt="tachometer dashboard" />
+            Fund Wallet
+          </a>
+        </li>
+        <li>
+          <a href="/users/withdraw" class="flex">
+            <img src="/img/dna.svg" alt="tachometer dashboard" />
+            Withraw fund
+          </a>
+        </li>
+        <li>
+          <a href="/users/profile" class="flex">
+            <img src="/img/user.svg" alt="tachometer dashboard" />
+            Profile
+          </a>
+        </li>
+        <li>
+          <a href="/users/settings" class="flex">
+            <img src="/img/folder.svg" alt="tachometer dashboard" />
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+
+  <!-- FUNDS -->
+  <section class="main">
+    <div class="head">FUNDING</div>
+    <div class="stat">
+      <p>
+        <b>MAKE INSTANT DEPOSIT (~ 15 MINS)</b>
+        <br />
+        <br />
+        Payment via BITCOIN:
+        <br />
+        <br />
+        Other payment option are available on request only, contact us if you
+        have to pay using Payeer or Perfect money. info@whales-investment.com
+      </p>
+      <form action="/users/fund" method="POST">
+        <div class="group">
+          <select name="plan" id="plan">
+            <option value="">Select</option>
+            <option name="beginner" value="beginner">BEGINNER</option>
+            <option name="pro" value="pro">PRO</option>
+            <option name="promo" value="promo">PROMO</option>
+            <option name="gold" value="gold">GOLD</option>
+          </select>
+        </div>
+        <div class="group">
+          <input type="number" placeholder="Amount USD" id="planValue" value="" name="amount"/>
+        </div>
+        <input type="submit" value="PROCEED" id="planBtn"/>
+      </form>
+    </div>
+  </section>
+</div>
+
+<script src="/js/fund.js"></script>

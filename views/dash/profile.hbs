@@ -1,0 +1,140 @@
+<header id="head">
+  <div class="container flex">
+    <div class="logo">
+      <a href="/"><img src="/img/logo.png" alt="" /></a>
+    </div>
+    <nav class="flex">
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+      <ul class="sec-nav ml-5">
+        <li><a href="#"><i class="fas fa-user"></i> | {{name}} </a></li>
+        <li><a href="/users/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<div class="container flex">
+      <section class="side-bar">
+        <div class="brand">
+          <h2>bitly</h2>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/users/dashboard" class="flex">
+                <img src="/img/tachometer-alt.svg" alt="tachometer dashboard" />
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="/users/fund" class="flex">
+                <img src="/img/chart-bar.svg" alt="tachometer dashboard" />
+                Fund Wallet
+              </a>
+            </li>
+            <li>
+              <a href="/users/withdraw" class="flex">
+                <img src="/img/dna.svg" alt="tachometer dashboard" />
+                Withraw fund
+              </a>
+            </li>
+            <li>
+              <a href="/users/profile" class="flex active">
+                <img src="/img/user.svg" alt="tachometer dashboard" />
+                Profile
+              </a>
+            </li>
+            <li>
+              <a href="/users/settings" class="flex">
+                <img src="/img/folder.svg" alt="tachometer dashboard" />
+                Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section class="main">
+        <div class="head">PROFILE</div>
+          <div class="flex">
+            <form action="/users/profile" style="width: 50%;" id="profile-form" method="POST">
+                <div class="group">
+                    <label for="">Phone Number</label>
+                  <input type="number" placeholder="Enter Phone Number" name="mobile"/>
+                </div>
+                <div class="group">
+                    <label for="">Payment Detail e.g. Bitcoin,  Dogecoin or BNB Address here</label>
+                  <input type="text" placeholder="Enter your Wallet ID" name="address" />
+                </div>
+                <div class="group">
+                    <label for="">Country</label>
+                  <input type="text" placeholder="Enter Your Country" name="country" />
+                </div>
+                <div class="group">
+                    <label for="status">Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <input type="submit" value="SUBMIT" />
+              </form>
+              <div class="info" style="width: 50%;">
+                <div class="head">User Details</div>
+                <div class="details">
+                    <div class="flex">
+                        <p class="req" style="width: 30%;">Name</p>
+                        <p class="res" style="width: 65%;">{{firstName}} {{lastName}}</p>
+                    </div>
+                    {{#if data}}
+                        {{#each data}}
+                          <div class="flex">
+                              <p class="req" style="width: 30%;">Country:</p>
+                              <p class="res" style="width: 65%;"> {{country}} </p>
+                          </div>
+                          <div class="flex">
+                              <p class="req" style="width: 30%;">Phone Number:</p>
+                              <p class="res" style="width: 65%;">{{mobile}} </p>
+                          </div>
+                          <div class="flex">
+                              <p class="req" style="width: 30%;">Wallet Id:</p>
+                              <p class="res" style="width: 65%;">{{address}} </p>
+                          </div>
+                    {{/each}}
+                    {{else}}
+                      <div class="flex">
+                        <p class="req" style="width: 30%;">Country:</p>
+                        <p class="res" style="width: 65%;"> Unset </p>
+                      </div>
+                      <div class="flex">
+                        <p class="req" style="width: 30%;">Phone Number:</p>
+                        <p class="res" style="width: 65%;"> Unset </p>
+                      </div>
+                   {{/if}}
+                   {{#if fund}}
+                   {{#each fund}}
+                      <div class="flex">
+                          <p class="req" style="width: 30%;">Active Plan:</p>
+                          <p class="res" style="width: 65%;"> {{plan}} </p>
+                      </div>
+                   {{/each}}
+                   {{else}}
+                   <div class="flex">
+                        <p class="req" style="width: 30%;">Active Plan:</p>
+                        <p class="res" style="width: 65%;"> Unset </p>
+                    </div>
+                   {{/if}}
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+<script src="/js/dashboard.js"></script>

@@ -1,0 +1,41 @@
+@media(max-width: 768px){
+    nav.flex{
+        display: none!important;
+    }
+
+    .menu{
+        display: block;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    .menu img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .landing .text{
+        text-align: center;
+        font-size: 15px!important;
+    }
+
+    .text h1, .text h3{
+        font-size: 2rem;
+    }
+
+    .text p{
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .landing .image{
+        display: none;
+    }
+
+    .grid-2{
+        align-items: flex-start;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

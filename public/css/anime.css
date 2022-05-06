@@ -1,0 +1,11 @@
+@keyframes upDown {
+    0%, 100%{
+        transform: translateY(-5%);
+        transition: ease-in-out 0.3s;
+    }
+    
+    50%{
+        transform: translateY(0%);
+        transition: ease-in-out 0.3s;
+    }
+}
